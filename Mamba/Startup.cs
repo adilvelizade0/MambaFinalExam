@@ -34,6 +34,8 @@ namespace Mamba
             services.AddControllersWithViews();
             services.AddScoped<IMemberService, MemberRepository>();
             services.AddScoped<IMemberDal, EFMemberRepository>();
+            services.AddScoped<ISettingService, SettingRepository>();
+            services.AddScoped<ISettingDal, EFSettingRepository>();
 
             services.AddDbContext<AppDbContext>(op =>
             {
@@ -64,7 +66,7 @@ namespace Mamba
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
-            
+
 
             app.UseEndpoints(endpoints =>
             {

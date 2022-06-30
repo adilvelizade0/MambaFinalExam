@@ -1,4 +1,9 @@
-﻿<header>
+﻿@inject ISettingDal settingRepository
+@{
+    var settings = await settingRepository.GetAllSettingsAsync();
+}
+
+<header>
     <div id="carouselExampleIndicators"
          class="carousel slide"
          data-bs-ride="true">
@@ -297,7 +302,7 @@
                                        class="fa-solid fa-location-dot fs-2"></i>
                                 </div>
                                 <h4 class="fw-bold text-muted">Our Address</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p>@settings["address"]</p>
                             </div>
                         </div>
                         <div class="col-12 my-3 my-lg-0 col-lg-3 px-2">
@@ -308,7 +313,7 @@
                                 </div>
                                 <h4 class="fw-bold text-muted">Email Us</h4>
                                 <p class="text-muted text-center">
-                                    info@example.com contact@example.com
+                                    @settings["email1"] @settings["email2"]
                                 </p>
                             </div>
                         </div>
@@ -320,8 +325,8 @@
                                 </div>
                                 <h4 class="fw-bold text-muted">Call Us</h4>
                                 <p class="text-muted text-center">
-                                    +1 5589 55488 55 <br />
-                                    +1 6678 254445 41
+                                    @settings["call1"] <br />
+                                    @settings["call2"]
                                 </p>
                             </div>
                         </div>

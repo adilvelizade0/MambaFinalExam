@@ -15,5 +15,6 @@ namespace DAL.Data
         }
 
         public DbSet<Member> Members { get; set; }
+        public DbSet<Setting> Settings { get; set; }
     }
 }

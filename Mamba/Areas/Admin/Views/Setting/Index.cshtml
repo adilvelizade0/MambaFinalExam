@@ -1,0 +1,35 @@
+﻿@model List<Setting>
+
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Key</th>
+                        <th>Value</th>
+
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var setting in Model)
+                    {
+                        <tr>
+                            <th>@setting.Id</th>
+
+                            <td>@setting.Key</td>
+                            <td>@setting.Value</td>
+                            <td class="d-flex justify-content-center">
+
+                                <a class="btn btn-warning mx-2" asp-area="Admin" asp-controller="Setting" asp-action="Update" asp-route-id="@setting.Id">Update</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model Member
+
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <a class="btn btn-success my-3" asp-area="Admin" asp-controller="Member" asp-action="Create">Create</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Job</th>
+                        <th>Instagram</th>
+                        <th>Facebook</th>
+                        <th>Twitter</th>
+                        <th>Linkedin</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr>
+                        <th>@Model.Id</th>
+                        <td style="width:10%;">
+                            <img class="img-fluid" src="@Model.ImageUrl" />
+                        </td>
+                        <td>@Model.Name</td>
+                        <td>@Model.Job</td>
+                        <td>@Model.InstagramLink</td>
+                        <td>@Model.FacebookLink</td>
+                        <td>@Model.TwiterLink</td>
+                        <td>@Model.LinkedinLink</td>
+                        <td class="d-flex justify-content-center">
+
+                            <a class="btn btn-warning mx-2" asp-area="Admin" asp-controller="Member" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+                            <a class="btn btn-danger mx-2" asp-area="Admin" asp-controller="Member" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

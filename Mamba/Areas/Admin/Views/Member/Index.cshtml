@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-10">
-            <a class="btn btn-sucess my-3" asp-area="Admin" asp-controller="Member" asp-action="Create">Create</a>
+            <a class="btn btn-success my-3" asp-area="Admin" asp-controller="Member" asp-action="Create">Create</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -25,9 +25,9 @@
                             <td>@member.Name</td>
                             <td>@member.Job</td>
                             <td class="d-flex justify-content-center">
-                                <a class="btn btn-primary mx-2">Details</a>
-                                <a class="btn btn-warning mx-2">Update</a>
-                                <a class="btn btn-danger mx-2">Delete</a>
+                                <a class="btn btn-primary mx-2" asp-area="Admin" asp-controller="Member" asp-action="Details" asp-route-id="@member.Id">Details</a>
+                                <a class="btn btn-warning mx-2" asp-area="Admin" asp-controller="Member" asp-action="Update" asp-route-id="@member.Id">Update</a>
+                                <a class="btn btn-danger mx-2" asp-area="Admin" asp-controller="Member" asp-action="Delete" asp-route-id="@member.Id">Delete</a>
                             </td>
                         </tr>
                     }

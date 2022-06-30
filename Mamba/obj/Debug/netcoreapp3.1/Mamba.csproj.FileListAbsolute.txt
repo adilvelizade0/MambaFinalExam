@@ -94,3 +94,10 @@ C:\Users\Administrator\source\repos\Mamba\Mamba\bin\Debug\netcoreapp3.1\Newtonso
 C:\Users\Administrator\source\repos\Mamba\Mamba\bin\Debug\netcoreapp3.1\X.PagedList.dll
 C:\Users\Administrator\source\repos\Mamba\Mamba\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
 C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Mamba.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Member\Create.cshtml.g.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Member\Update.cshtml.g.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Member\Details.cshtml.g.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Setting\Index.cshtml.g.cs
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Setting\Update.cshtml.g.cs

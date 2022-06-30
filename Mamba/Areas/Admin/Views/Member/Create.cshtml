@@ -1,0 +1,46 @@
+﻿@model Member
+
+<div class="container py-5">
+    <div class="raw justify-content-center">
+        <div class="col-10">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Job" class="form-label"></label>
+                    <input asp-for="Job" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="Job"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="ImageUrl"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InstagramLink" class="form-label"></label>
+                    <input asp-for="InstagramLink" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="InstagramLink"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FacebookLink" class="form-label"></label>
+                    <input asp-for="FacebookLink" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="FacebookLink"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="TwiterLink" class="form-label"></label>
+                    <input asp-for="TwiterLink" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="TwiterLink"></span>
+                </div>
+                 <div class="mb-3">
+                    <label asp-for="LinkedinLink" class="form-label"></label>
+                    <input asp-for="LinkedinLink" class="form-control" placeholder="Name">
+                    <span class="my-2 text-danger" asp-validation-for="LinkedinLink"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

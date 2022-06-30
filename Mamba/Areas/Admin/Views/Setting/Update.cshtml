@@ -1,0 +1,16 @@
+﻿@model Setting
+
+<div class="container py-5">
+    <div class="raw justify-content-center">
+        <div class="col-10">
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="Value" class="form-label"></label>
+                    <input asp-for="Value" class="form-control" placeholder="Value">
+                    <span class="my-2 text-danger" asp-validation-for="Value"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

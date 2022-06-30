@@ -22,7 +22,7 @@ namespace Business.Implementations
             {
                 throw new ArgumentNullException();
             }
-
+            entity.CreatedDate = DateTime.Now;
             await _memberRepository.AddAsync(entity);
         }
 
@@ -65,7 +65,7 @@ namespace Business.Implementations
             {
                 throw new ArgumentNullException();
             }
-
+            entity.UpdatedDate = DateTime.Now;
             await _memberRepository.UpdateAsync(entity);
         }
     }
