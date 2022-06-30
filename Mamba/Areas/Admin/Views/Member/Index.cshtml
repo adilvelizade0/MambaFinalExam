@@ -1,0 +1,53 @@
+﻿@model IPagedList<Member>
+
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <a class="btn btn-sucess my-3" asp-area="Admin" asp-controller="Member" asp-action="Create">Create</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Job</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var member in Model)
+                    {
+                        <tr>
+                            <th>@member.Id</th>
+                            <td style="width:10%;">
+                                <img class="img-fluid" src="@member.ImageUrl" />
+                            </td>
+                            <td>@member.Name</td>
+                            <td>@member.Job</td>
+                            <td class="d-flex justify-content-center">
+                                <a class="btn btn-primary mx-2">Details</a>
+                                <a class="btn btn-warning mx-2">Update</a>
+                                <a class="btn btn-danger mx-2">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="pull-right d-flex justify-content-center py-3">
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index",
+                new
+                {
+                page,
+                search = Context.Request.Query["search"]
+                }),
+                new PagedListRenderOptionsBase
+                {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" },
+                Display = PagedListDisplayMode.IfNeeded
+
+                })
+            </div>
+        </div>
+    </div>
+</div>
