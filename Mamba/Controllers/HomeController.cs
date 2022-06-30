@@ -1,5 +1,6 @@
 ﻿using Business.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Mamba.Controllers
 {
@@ -11,9 +12,10 @@ namespace Mamba.Controllers
         {
             _memberService = memberService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var data = await _memberService.GetAll();
+            return View(data);
         }
     }
 }

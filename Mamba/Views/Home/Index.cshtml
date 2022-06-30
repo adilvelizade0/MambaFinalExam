@@ -3,6 +3,8 @@
     var settings = await settingRepository.GetAllSettingsAsync();
 }
 
+@model List<Member>
+
 <header>
     <div id="carouselExampleIndicators"
          class="carousel slide"
@@ -203,86 +205,34 @@
                 aliquid fuga eum quidem.
             </p>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-3 py-2 my-1">
-                    <div class="team__card">
-                        <img class="taem__card__img img-fluid rounded-2"
-                             src="https://bootstrapmade.com/demo/templates/Mamba/assets/img/team/team-1.jpg"
+                @foreach (var member in Model)
+                {
+                    <div class="col-12 col-md-6 col-lg-3 py-2 my-1">
+                        <div class="team__card">
+                            <img class="taem__card__img img-fluid rounded-2"
+                             src="~/uploads/members/@member.ImageUrl"
                              alt="" />
-                        <div class="px-3">
-                            <div class="team__desc py-3 d-flex flex-column align-items-center rounded-2">
-                                <h5 class="fw-bold text-light">Walter White</h5>
-                                <div class="my-1 team__divider"></div>
-                                <p class="text-light">Chief Executive Officer</p>
-                                <div class="team__socials d-flex mt-1">
-                                    <i class="fa-brands text-light fa-twitter mx-2"></i>
-                                    <i class="fa-brands text-light fa-facebook mx-2"></i>
-                                    <i class="fa-brands text-light fa-instagram mx-2"></i>
-                                    <i class="fa-brands text-light fa-linkedin mx-2"></i>
+                            <div class="px-3">
+                                <div class="team__desc py-3 d-flex flex-column align-items-center rounded-2">
+                                    <h5 class="fw-bold text-light">@member.Name</h5>
+                                    <div class="my-1 team__divider"></div>
+                                    <p class="text-light">@member.Job</p>
+                                    <div class="team__socials d-flex mt-1">
+                                        <a href="@member.TwiterLink"><i class="fa-brands text-light fa-twitter mx-2"></i></a>
+                                        <a href="@member.FacebookLink"> <i class="fa-brands text-light fa-facebook mx-2"></i></a>
+
+                                        <a href="@member.InstagramLink">  <i class="fa-brands text-light fa-instagram mx-2"></i></a>
+                                        <a href="@member.LinkedinLink">
+                                            <i class="fa-brands text-light fa-linkedin mx-2"></i>
+                                        </a>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 py-2 my-1">
-                    <div class="team__card">
-                        <img class="taem__card__img img-fluid rounded-2"
-                             src="https://bootstrapmade.com/demo/templates/Mamba/assets/img/team/team-1.jpg"
-                             alt="" />
-                        <div class="px-3">
-                            <div class="team__desc py-2 d-flex flex-column align-items-center rounded-2">
-                                <h5 class="fw-bold text-light">Walter White</h5>
-                                <div class="my-1 team__divider"></div>
-                                <p class="text-light">Chief Executive Officer</p>
-                                <div class="team__socials d-flex mt-1">
-                                    <i class="fa-brands text-light fa-twitter mx-2"></i>
-                                    <i class="fa-brands text-light fa-facebook mx-2"></i>
-                                    <i class="fa-brands text-light fa-instagram mx-2"></i>
-                                    <i class="fa-brands text-light fa-linkedin mx-2"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 py-2 my-1">
-                    <div class="team__card">
-                        <img class="taem__card__img img-fluid rounded-2"
-                             src="https://bootstrapmade.com/demo/templates/Mamba/assets/img/team/team-1.jpg"
-                             alt="" />
-                        <div class="px-3">
-                            <div class="team__desc py-3 d-flex flex-column align-items-center rounded-2">
-                                <h5 class="fw-bold text-light">Walter White</h5>
-                                <div class="my-1 team__divider"></div>
-                                <p class="text-light">Chief Executive Officer</p>
-                                <div class="team__socials d-flex mt-1">
-                                    <i class="fa-brands text-light fa-twitter mx-2"></i>
-                                    <i class="fa-brands text-light fa-facebook mx-2"></i>
-                                    <i class="fa-brands text-light fa-instagram mx-2"></i>
-                                    <i class="fa-brands text-light fa-linkedin mx-2"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 py-2 my-1">
-                    <div class="team__card">
-                        <img class="taem__card__img img-fluid rounded-2"
-                             src="https://bootstrapmade.com/demo/templates/Mamba/assets/img/team/team-1.jpg"
-                             alt="" />
-                        <div class="px-3">
-                            <div class="team__desc py-3 d-flex flex-column align-items-center rounded-2">
-                                <h5 class="fw-bold text-light">Walter White</h5>
-                                <div class="my-1 team__divider"></div>
-                                <p class="text-light">Chief Executive Officer</p>
-                                <div class="team__socials d-flex mt-1">
-                                    <i class="fa-brands text-light fa-twitter mx-2"></i>
-                                    <i class="fa-brands text-light fa-facebook mx-2"></i>
-                                    <i class="fa-brands text-light fa-instagram mx-2"></i>
-                                    <i class="fa-brands text-light fa-linkedin mx-2"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
+
             </div>
         </div>
     </section>
