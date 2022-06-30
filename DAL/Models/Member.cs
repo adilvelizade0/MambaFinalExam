@@ -17,7 +17,6 @@ namespace DAL.Models
         [Required]
         public string Job { get; set; }
 
-        [Required]
         public string ImageUrl { get; set; }
 
         [Required]
@@ -32,6 +31,7 @@ namespace DAL.Models
         [Required]
         public string LinkedinLink { get; set; }
 
+        [Required]
         [NotMapped]
         public IFormFile ImageFile { get; set; }
     }

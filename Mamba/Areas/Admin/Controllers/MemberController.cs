@@ -1,6 +1,8 @@
 ﻿using Business.Services;
+using Common;
 using DAL.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using X.PagedList;
@@ -11,10 +13,12 @@ namespace Mamba.Areas.Admin.Controllers
     public class MemberController : Controller
     {
         private readonly IMemberService _memberService;
+        private readonly IWebHostEnvironment _env;
 
-        public MemberController(IMemberService memberService)
+        public MemberController(IMemberService memberService,IWebHostEnvironment env)
         {
             _memberService = memberService;
+            _env = env;
         }
 
         public async Task<IActionResult> Index(int page = 1)
@@ -36,6 +40,7 @@ namespace Mamba.Areas.Admin.Controllers
             try
             {
                 var data = await _memberService.Get(id);
+                DeleteImage(_env.WebRootPath + "/uploads/members/" + data.ImageUrl);
                 await _memberService.Delete(data);
             }
             catch (System.Exception e)
@@ -61,6 +66,7 @@ namespace Mamba.Areas.Admin.Controllers
 
             try
             {
+                member.ImageUrl = await member.ImageFile.CreateImage(_env.WebRootPath,"members");
                 await _memberService.Create(member);
             }
             catch (System.Exception e)
@@ -117,6 +123,9 @@ namespace Mamba.Areas.Admin.Controllers
         {
             try
             {
+                var data = await _memberService.Get(member.Id);
+                DeleteImage(_env.WebRootPath + "/uploads/members/"+ data.ImageUrl);
+                member.ImageUrl = await member.ImageFile.CreateImage(_env.WebRootPath, "members");
                 await _memberService.Update(member);
 
             }
@@ -130,6 +139,11 @@ namespace Mamba.Areas.Admin.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        private void DeleteImage(string path)
+        {
+            System.IO.File.Delete(path);
         }
     }
 }
