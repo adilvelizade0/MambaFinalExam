@@ -1,4 +1,5 @@
 ﻿using Business.Services;
+using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using X.PagedList;
@@ -24,6 +25,26 @@ namespace Mamba.Areas.Admin.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Member member)
+        {
+            try
+            {
+                await _memberService.Create(member);
+            }
+            catch (System.Exception e)
+            {
+
+                return Json(new
+                {
+                    error = e.Message
+                });
+            }
+            return RedirectToAction("Index");
         }
     }
 }
