@@ -87,6 +87,16 @@ header {
 }
 
 #team {
+  .team__card {
+    overflow: hidden;
+    cursor: pointer;
+    .taem__card__img {
+      transition: 0.7s;
+    }
+    &:hover .taem__card__img {
+      transform: scale(1.2);
+    }
+  }
   .team__desc {
     background-color: #6c8498;
     opacity: 0.9;
@@ -127,5 +137,61 @@ header {
       align-items: center;
       border-radius: 50%;
     }
+  }
+}
+
+footer {
+  background-color: #5c768d;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  li {
+    list-style: none;
+  }
+
+  i {
+    color: #428bca;
+    font-size: 0.8rem;
+  }
+
+  p {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(118, 143, 166);
+
+    &:hover {
+      background-color: #428bca;
+    }
+
+    i {
+      font-size: 1rem;
+      color: #fff;
+    }
+  }
+}
+
+.bottom-footer {
+  background-color: #587187;
+  p {
+    color: #fff;
+    font-size: 0.9rem;
   }
 }

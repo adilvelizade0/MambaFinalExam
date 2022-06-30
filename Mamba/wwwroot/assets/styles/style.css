@@ -92,6 +92,21 @@ header .carousel-control-prev {
   font-size: 2rem;
 }
 
+#team .team__card {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#team .team__card .taem__card__img {
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+#team .team__card:hover .taem__card__img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 #team .team__desc {
   background-color: #6c8498;
   opacity: 0.9;
@@ -139,5 +154,69 @@ header .carousel-control-prev {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 50%;
+}
+
+footer {
+  background-color: #5c768d;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer i {
+  color: #428bca;
+  font-size: 0.8rem;
+}
+
+footer p {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+footer h2 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+footer .social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #768fa6;
+}
+
+footer .social-link:hover {
+  background-color: #428bca;
+}
+
+footer .social-link i {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.bottom-footer {
+  background-color: #587187;
+}
+
+.bottom-footer p {
+  color: #fff;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=style.css.map */

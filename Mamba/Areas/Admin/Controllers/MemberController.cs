@@ -15,7 +15,7 @@ namespace Mamba.Areas.Admin.Controllers
         private readonly IMemberService _memberService;
         private readonly IWebHostEnvironment _env;
 
-        public MemberController(IMemberService memberService,IWebHostEnvironment env)
+        public MemberController(IMemberService memberService, IWebHostEnvironment env)
         {
             _memberService = memberService;
             _env = env;
@@ -46,10 +46,7 @@ namespace Mamba.Areas.Admin.Controllers
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
             return RedirectToAction("Index");
         }
@@ -66,16 +63,13 @@ namespace Mamba.Areas.Admin.Controllers
 
             try
             {
-                member.ImageUrl = await member.ImageFile.CreateImage(_env.WebRootPath,"members");
+                member.ImageUrl = await member.ImageFile.CreateImage(_env.WebRootPath, "members");
                 await _memberService.Create(member);
             }
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
             return RedirectToAction("Index");
         }
@@ -92,10 +86,7 @@ namespace Mamba.Areas.Admin.Controllers
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
         }
 
@@ -110,10 +101,7 @@ namespace Mamba.Areas.Admin.Controllers
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
         }
 
@@ -124,7 +112,7 @@ namespace Mamba.Areas.Admin.Controllers
             try
             {
                 var data = await _memberService.Get(member.Id);
-                DeleteImage(_env.WebRootPath + "/uploads/members/"+ data.ImageUrl);
+                DeleteImage(_env.WebRootPath + "/uploads/members/" + data.ImageUrl);
                 member.ImageUrl = await member.ImageFile.CreateImage(_env.WebRootPath, "members");
                 await _memberService.Update(member);
 
@@ -132,10 +120,7 @@ namespace Mamba.Areas.Admin.Controllers
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
 
             return RedirectToAction("Index");

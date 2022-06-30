@@ -103,3 +103,4 @@ C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Setting\Update.cshtml.g.cs
 C:\Users\Administrator\source\repos\Mamba\Mamba\bin\Debug\netcoreapp3.1\Common.dll
 C:\Users\Administrator\source\repos\Mamba\Mamba\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Users\Administrator\source\repos\Mamba\Mamba\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Notfound\Index.cshtml.g.cs
