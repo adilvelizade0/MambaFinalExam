@@ -1,9 +1,12 @@
 ﻿@model Member
 
 <div class="container">
-    <div class="row">
+    <div class="row py-5">
         <div class="col-10">
-            <a class="btn btn-success my-3" asp-area="Admin" asp-controller="Member" asp-action="Create">Create</a>
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="btn btn-success my-3" asp-area="Admin" asp-controller="Member" asp-action="Create">Create</a>
+             <a asp-area="Admin" asp-controller="Member" asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -32,7 +35,7 @@
                         <td>@Model.FacebookLink</td>
                         <td>@Model.TwiterLink</td>
                         <td>@Model.LinkedinLink</td>
-                        <td class="d-flex justify-content-center">
+                        <td>
 
                             <a class="btn btn-warning mx-2" asp-area="Admin" asp-controller="Member" asp-action="Update" asp-route-id="@Model.Id">Update</a>
                             <a class="btn btn-danger mx-2" asp-area="Admin" asp-controller="Member" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>

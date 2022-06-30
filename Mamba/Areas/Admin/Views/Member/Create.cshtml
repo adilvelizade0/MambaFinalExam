@@ -34,12 +34,13 @@
                     <input asp-for="TwiterLink" class="form-control" placeholder="Name">
                     <span class="my-2 text-danger" asp-validation-for="TwiterLink"></span>
                 </div>
-                 <div class="mb-3">
+                <div class="mb-3">
                     <label asp-for="LinkedinLink" class="form-label"></label>
                     <input asp-for="LinkedinLink" class="form-control" placeholder="Name">
                     <span class="my-2 text-danger" asp-validation-for="LinkedinLink"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <a asp-area="Admin" asp-controller="Member" asp-action="Index" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>

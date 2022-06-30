@@ -1,7 +1,7 @@
-﻿@model List<Setting>
+﻿@model IPagedList<Setting>
 
 <div class="container">
-    <div class="row">
+    <div class="row py-5">
         <div class="col-10">
             <table class="table">
                 <thead>
@@ -30,6 +30,21 @@
                     }
                 </tbody>
             </table>
+            <div class="pull-right d-flex justify-content-center py-3">
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index",
+                new
+                {
+                page,
+                search = Context.Request.Query["search"]
+                }),
+                new PagedListRenderOptionsBase
+                {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" },
+                Display = PagedListDisplayMode.IfNeeded
+
+                })
+            </div>
         </div>
     </div>
 </div>

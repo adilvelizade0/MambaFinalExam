@@ -2,6 +2,7 @@
 using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace Mamba.Areas.Admin.Controllers
 {
@@ -13,10 +14,10 @@ namespace Mamba.Areas.Admin.Controllers
         {
             _settingService = settingService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
             var data = await _settingService.GetAll();
-            return View(data);
+            return View(data.ToPagedList(page,2));
         }
 
         [HttpGet]
@@ -30,10 +31,7 @@ namespace Mamba.Areas.Admin.Controllers
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
         }
 
@@ -57,10 +55,7 @@ namespace Mamba.Areas.Admin.Controllers
             catch (System.Exception e)
             {
 
-                return Json(new
-                {
-                    error = e.Message
-                });
+                return RedirectToAction("Index", "Notfound");
             }
 
 
